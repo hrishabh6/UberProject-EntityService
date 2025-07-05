@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class Booking extends BaseModel{
-
+    
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date startingTime;
 
