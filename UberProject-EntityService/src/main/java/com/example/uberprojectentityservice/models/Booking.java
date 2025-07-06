@@ -12,6 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(indexes = {@Index(columnList = "driver_id")})
 public class Booking extends BaseModel{
     
     @Temporal(value = TemporalType.TIMESTAMP)
@@ -30,5 +31,11 @@ public class Booking extends BaseModel{
 
     @ManyToOne
     private Passenger passenger;
+
+    @OneToOne
+    private ExactLocation pickupLocation;
+
+    @OneToOne
+    private ExactLocation dropOffLocation;
 
 }
